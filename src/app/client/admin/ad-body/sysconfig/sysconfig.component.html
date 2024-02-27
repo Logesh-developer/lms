@@ -1,0 +1,33 @@
+<section id="sys_config" >
+    <div class="container-fluid cont-sys">
+        <div class="row">
+            <div class="col-md-12">
+              <h4 class="text-decoration-underline ms-2">System configuration</h4>
+            </div>
+        </div>
+        <div class="container-fluid">
+            
+
+            <div class="container-fluid  ">
+                <ul class="nav nav-tabs" id="myTabs">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" routerLink="leavetype">Configure Leave Type</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" routerLink="holiday">Configure Holiday</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-bs-toggle="tab" routerLink="emailtemplate">Configure E-mail Template </a>
+                  </li>
+                </ul>
+              
+                <div class="tab-content mt-2">
+                  
+                  <router-outlet></router-outlet>
+                  
+                </div>    
+            
+          </div>
+    </div>
+    </div>
+  </section>

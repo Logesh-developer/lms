@@ -1,0 +1,89 @@
+<section id="calendar" class="pt-5">
+    <div class="container-fluid cont-m">
+      <div class="row ">
+        <div class="col-md-12">
+          <h4 class="text-decoration-underline ms-2">Leave calendar</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg col-sm-12" >
+
+          <full-calendar [options]="calendarOptions" class="custom-calendar" ></full-calendar>
+          
+          <!-- <img src="static/assets/images/googletips_calendar_mini.jpg" alt="" class="img-fluid" style="width: 100%;"> -->
+          <!-- <div class="calendar-container">
+            <header class="calendar-header">
+              <p class="calendar-current-date">{{ currdateText }}</p>
+              <div class="calendar-navigation">
+                <span id="calendar-prev" class="material-symbols-rounded" (click)="onIconClick($event.target)">
+                  <i class="bi bi-arrow-left-short"></i>
+                </span>
+                <span id="calendar-next" class="material-symbols-rounded" (click)="onIconClick($event.target)">
+                  <i class="bi bi-arrow-right-short"></i>
+                </span>
+              </div>
+            </header>
+            <div class="calendar-body">
+              <ul class="calendar-weekdays justify-content-between">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+              </ul>
+              <ul class="calendar-dates">
+                <li *ngFor="let date of calendarDates" [class]="date.class">{{ date.day }}</li>
+              </ul>
+            </div>
+          </div> -->
+        
+        </div>
+        <div class="col-lg col-sm-12">
+         
+          <div class="container-fluid mt-3">
+            <div class="table-responsive ">
+              <table class="table table-responsive table-hover w-100">
+                <thead class="fixed-header" style="color: rgb(39, 53, 104)">
+                  <tr>
+                    <th>Employee Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Type of Leave</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>logesh</td>
+                    <td>2023-11-01</td>
+                    <td>2023-11-03</td>
+                    <td>Annual Leave</td>
+                  </tr>
+                  <tr>
+                    <td>Joe Smith</td>
+                    <td>2023-11-05</td>
+                    <td>2023-11-06</td>
+                    <td>Sick Leave</td>
+                  </tr>
+                  <tr>
+                    <td>Samuel</td>
+                    <td>2023-11-10</td>
+                    <td>2023-11-15</td>
+                    <td>Maternity Leave</td>
+                  </tr>
+                  <tr>
+                    <td>Michael</td>
+                    <td>2023-11-12</td>
+                    <td>2023-11-14</td>
+                    <td>Personal Leave</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>

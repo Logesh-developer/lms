@@ -1,0 +1,91 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+      >
+        <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+      </button>
+      <img src="/../../assets/login/images/logo.png" alt="" height="40">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#topNavBar"
+        aria-controls="topNavBar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+      <span class="fs-1"><i class="bi bi-person-circle"></i></span>
+      </button>
+      <!-- <div class="collapse navbar-collapse" id="topNavBar" *ngFor="let data of currentUserArray" >
+        <div class="login d-flex ms-auto  align-items-center" *ngIf="data.usertype === 'manager'">
+          <div class=" text-white ms-auto ">
+            <img class="img-fluid mt-0 mb-0 " [src]="data.profilepic" alt="" style="height: 40px; width: 40px; border-radius: 50%;">
+           
+             
+            
+          </div>
+          <div class=" text-white" >
+            <div class="row ">
+              <p class="mt-0 mb-0 ms-1">{{data.firstname +' '+ data.lastname}}</p>
+              <p class="mt-0 mb-0 ms-1"><button type="button" class="btn  text-primary m-0 p-0" data-bs-toggle="modal" data-bs-target="#logout">Logout</button></p>
+            </div>
+          </div>
+        </div>
+       
+      </div> -->
+
+      <ng-container *ngFor="let data of currentUserArray">
+        <div class="collapse navbar-collapse" id="topNavBar" *ngIf="data.usertype === 'manager'">
+          <div class="login d-flex ms-auto">
+              <div class="text-white mt-0 mb-0 me-2">
+                  <img class="img-fluid" [src]="data.profilepic" alt="" style="height: 40px; width: auto; border-radius: 50%;">
+              </div>
+              <div class="text-white">
+                  <div class="row align-items-center">
+                      <div class="col">
+                          <p class="mt-0 mb-0">{{ data.firstname + ' ' + data.lastname }}</p>
+                          <p class="mt-0 mb-0 text-primary">{{ data.usertype }}</p>
+                      </div>
+                      <div class="col-auto ps-0">
+                          <div class="dropdown ms-0 p-0">
+                              <button class="btn btn-secondary border-0 bg-dark p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <!-- <img src="../../../assets/login/images/icons8-logout-27 (1).png" alt="" class="h-75 "> -->
+                                  <i class="bi bi-chevron-down"></i>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                  <li><button type="button" class="dropdown-item text-danger text-center" data-bs-toggle="modal" data-bs-target="#logout"><i class="bi bi-box-arrow-right"></i>Logout</button></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+    </ng-container>
+      
+    </div>
+  </nav>
+
+  <div class="modal fade" id="logout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Logout?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          confirm logout
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          <a routerLink="" style="text-decoration: none; color: white;"><button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="logout()">Quit </button></a>
+        </div>
+      </div>
+    </div>
+  </div>

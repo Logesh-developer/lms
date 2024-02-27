@@ -1,0 +1,28 @@
+.cont-m {
+    min-height: 90dvh;
+    padding: 1rem;
+  }
+
+// calendar
+/* Reduce font size of month name */
+.custom-calendar .fc-toolbar-title {
+    font-size: 16px !important; /* Adjust font size as needed */
+  }
+  
+  /* Add color to calendar cells */
+  .custom-calendar .fc-daygrid-day {
+    background-color: #f0f0f0; /* Set background color of calendar cells */
+  }
+  
+  /* Add color to event titles */
+  .custom-calendar .fc-event-title {
+    color: #ffffff; /* Set color of event titles */
+  }
+  
+  /* Add color to event background */
+  .custom-calendar .fc-event {
+    background-color: #007bff !important; /* Set background color of events */
+  }
+  
+
+

@@ -1,0 +1,57 @@
+@media (min-width: 992px) {
+    
+  
+    .sidebar-nav {
+      -webkit-transform: none;
+      transform: none;
+      visibility: visible !important;
+      height: calc(100% - var(--topNavbarHeight));
+      top: var(--topNavbarHeight);
+    }
+  }
+  
+  .sidebars {
+    width: 270px;
+    background-color: rgb(33, 37, 41);
+    margin-right: 10px;
+    position: fixed;
+    display: flex;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+  }
+  
+  @media screen and (max-width: 991.98px) {
+    .sidebars {
+      display: none;
+    }
+    .lgimg {
+      display: none;
+    }
+  }
+  
+  li {
+    padding: 12px;
+  }
+
+  .sidebars .sn .container .navbar-nav .nav-item a.nav-link {
+    color: #e0e0e06f; /* Change color as per your preference */
+    text-decoration: none;
+    transition: color 0.3s; /* Smooth transition for color change */
+  }
+  
+  .sidebars .sn .container .navbar-nav .nav-item a.nav-link:hover {
+    color: #f1f1f1d8; /* Change color to the desired hover effect color */
+  }
+  
+  .sidebars .sn .container .navbar-nav .nav-item a.nav-link.active {
+    color: #f7f2f2; /* Change color for the active link */
+    background-color: #31c82e3a; /* Background color with 0.75 transparency */
+    border-left: 5px solid #31c82ebf; /* Border start color effect */
+    border-radius: 7px;
+  }
+  
+  .sidebars .sn .container .navbar-nav .nav-item a.nav-link.active:hover {
+    background-color: rgba(153, 228, 118, 0.783); /* Increase transparency on hover */
+  }
+  

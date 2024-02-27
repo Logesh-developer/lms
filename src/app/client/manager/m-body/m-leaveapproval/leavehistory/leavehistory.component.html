@@ -1,0 +1,38 @@
+<div class="tab-pane fade show active" id="tab2">
+    <div class="row">
+      <div class="container-fluid my-2 py-4">
+        <div class="col-md-12">
+          <h4 class="text-decoration-underline ms-2">Leave History</h4>
+        </div>
+       
+      </div>
+    </div> 
+    <div class="row px-2">
+      <table class="table  table-responsive" datatable [dtOptions]="dtOptions2" [dtTrigger]="dtTrigger2">
+        <thead>
+          <tr>
+            <th>E.code</th>
+            <th>Name</th>
+            <th>Leave Type</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Days/Hrs</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let leave of leaveHistory">
+            <td>{{ leave.Ecode }}</td>
+            <td>{{ leave.Ename }}</td>
+            <td>{{ leave.leaveType }}</td>
+            <td>{{ leave.fromDate }}</td>
+            <td>{{ leave.toDate }}</td>
+            <td>{{ calculateDays(leave.fromDate, leave.toDate, leave.permissionFrom, leave.permissionTo) }}</td>
+            <td>{{ leave.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+    
+  </div>

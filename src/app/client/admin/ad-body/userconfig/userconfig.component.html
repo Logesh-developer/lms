@@ -1,0 +1,278 @@
+<section id="user_config" >
+            
+    <div class=" container-fluid cont-a">
+        <div class="row">
+            <div class="col-md-12">
+              <h4 class="text-decoration-underline ms-2">User configuration</h4>
+            </div>
+        </div>
+        
+            <div class="row">
+                <div class="col-12 ">
+                <button type="button" class="btn btn-primary float-end pe-4 me-5"  data-bs-toggle="modal" data-bs-target="#createuser" ><span><i class="bi bi-plus-circle"></i></span>Create</button> 
+
+                </div>
+                <div class="modal fade" id="createuser" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel" >{{ isCreateMode ? 'Create User' : 'Modify User' }}</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body pb-0">
+                            <div class="container mt-1">
+                              <form id="userc" [formGroup]="userform" (ngSubmit)="postEmployeeDetails()">
+                                <div class="form-group">
+                                  <label>Profile Picture<span class="text-danger">*</span></label>
+                                  <input type="text" formControlName="profilepic" class="form-control  mb-3"/>
+                                  <div *ngIf="userform.get('profilepic')?.errors?.['required'] && userform.get('profilepic')?.touched" class="text-danger">
+                                      Profile Picture is required
+                                  </div>
+                                  <div *ngIf="userform.get('profilepic')?.errors?.['pattern'] && userform.get('profilepic')?.touched" class="text-danger">
+                                      Profile Picture must be a valid URL
+                                  </div>
+                                </div>
+                              
+                                <div class="form-group">
+                                    <label>First Name<span class="text-danger">*</span></label>
+                                    <input type="text" placeholder="firstname" formControlName="firstname" class="form-control mt-3 mb-3" (keyup)="validateFirstName()"/>
+                                    <div *ngIf="userform.get('firstname')?.invalid && userform.get('firstname')?.touched" class="text-danger" >
+                                      firstname is required
+                                    </div>
+                                    <div id="firstNameError" class="text-danger"></div>
+                                </div>
+                                <div class="form-group">
+                                  <label>Last Name<span class="text-danger">*</span></label>
+                                  <input type="text" placeholder="lastname" formControlName="lastname" class="form-control mt-3 mb-3" (keyup)="validateLastName()"/>
+                                  <div *ngIf="userform.get('lastname')?.invalid && userform.get('lastname')?.touched" class="text-danger" >
+                                    lastname is required
+                                  </div>
+                                  <div id="lastNameError" class="text-danger"></div>
+                                </div>
+                                <div class="form-group">
+                                  <label>Ecode<span class="text-danger">*</span></label>
+                                  <input type="text" placeholder="Ecode" formControlName="Ecode" class="form-control mt-3 mb-3"/>
+                                  <div *ngIf="userform.get('Ecode')?.invalid && userform.get('Ecode')?.touched" class="text-danger">
+                                    Ecode is required
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="usertype">User Type: <span class="text-danger">*</span></label>
+                                  <select class="form-control" name="usertype" id="usertype" formControlName="usertype">
+                                      <option value="" disabled selected>Select User Type</option>
+                                      <option value="admin">Admin</option>
+                                      <option value="employee">Employee</option>
+                                      <option value="manager">Manager</option>
+                                      <option value="hr">Hr</option>
+                                  </select>
+                                  <div *ngIf="userform.get('usertype')?.invalid && userform.get('usertype')?.touched" class="text-danger">
+                                    usertype is required
+                                  </div>
+                                </div>
+
+        
+                                <div class="form-group">
+                                  <label>Email<span class="text-danger">*</span></label>
+                                  <input type="email" placeholder="Email" formControlName="email" class="form-control mt-3 mb-3" (keyup)="validateEmail()"/>
+                                  <div *ngIf="userform.get('email')?.invalid && userform.get('email')?.touched" class="text-danger">
+                                      Email is required
+                                  </div>
+                                  <div id="emailError" class="text-danger"></div>
+                                </div>
+                              
+        
+                                <div class="form-group">
+                                    <label>Password<span class="text-danger">*</span></label>
+                                    <input type="password" placeholder="Password" formControlName="password" class="form-control mt-3 mb-3" (keyup)="validatePassword()"/>
+                                    <div *ngIf="userform.get('password')?.invalid && userform.get('password')?.touched" class="text-danger">
+                                      password is required
+                                    </div>
+                                  <div id="passwordError" class="text-danger"></div>
+
+                                </div>
+
+                                <div class="form-group">
+                                  <label>Confirm password<span class="text-danger">*</span></label>
+                                  <input type="password" placeholder="Confirm password" formControlName="confirmPassword" class="form-control mt-3 mb-3" (keyup)="validateConfirmPassword()"/>
+                                  <div *ngIf="userform.get('confirmPassword')?.invalid && userform.get('confirmPassword')?.touched" class="text-danger">
+                                    Confirm password is required
+                                  </div>
+                                  <div id="confirmPasswordError" class="text-danger"></div>
+
+                                </div>
+        
+                                <div class="form-group">
+                                    <label>Department<span class="text-danger">*</span></label>
+                                    <input type="text" placeholder="department" formControlName="department" class="form-control mt-3 mb-3"/>
+                                    <div *ngIf="userform.get('department')?.invalid && userform.get('department')?.touched" class="text-danger">
+                                      department is required
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                  <label>Manager<span class="text-danger">*</span></label>
+                                  <input type="text" placeholder="Manager" id="managerName" formControlName="manager" class="form-control mt-3 mb-3" (keyup)="validateManagerName()"/>
+                                  <div *ngIf="userform.get('manager')?.invalid && userform.get('manager')?.touched" class="text-danger">
+                                      Manager is required
+                                  </div>
+                                  <div id="managerNameError" class="text-danger"></div>
+                                </div>
+                                <div class="modal-footer overflow-hidden sticky-bottom " style="background-color: rgba(255, 255, 255, 0.9);">
+                                  <button *ngIf="isCreateMode" type="submit" class="btn btn-primary" [disabled]="!userform.valid">Add</button>
+                                  <button *ngIf="!isCreateMode" type="button" class="btn btn-primary" (click)="updateEmployee()">Update</button>
+                                  <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                                <!-- <button *ngIf="isCreateMode" type="submit" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="!userform.valid" >Add</button>
+                                <button *ngIf="!isCreateMode" type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="!userform.valid" (click)="updateEmployee()">Update</button> -->
+                              </form>
+                            </div>
+                        </div>
+                        <!-- <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> -->
+                        
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <h5 class="ps-3">Employee List</h5>
+            <div class="container-fluid tcont align-content-center  ">
+                
+              <table class="table table-striped table-hover align-baseline w-100" *ngIf="bool" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead class="card-header">
+                    <tr>
+                        <th>S.no</th>
+                        <th>Profile</th>
+                        <th>Name</th>
+                        <th>E.code</th>
+                        <th>Manager</th>
+                        <th>Department</th>
+                        <th class="text-center">Manage</th>
+                    </tr>
+                </thead>
+                <tbody class="overflow-y-scroll">
+                    <tr *ngFor="let employee of empdata; let i = index;">
+                        <td>{{ i + 1 }}</td>
+                        <td><img [src]="sanitizeImageUrl(employee.profilepic)" alt="Profile" style="width: 50px; height: 50px; border-radius: 50%;"></td>
+                        <td>{{ employee.firstname + " " + employee.lastname }}</td>
+                        <td>{{ employee.Ecode }}</td>
+                        <td>{{ employee.manager }}</td>
+                        <td>{{ employee.department }}</td>
+                        <td class="text-center">
+                            <button class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#createuser" (click)="editEmployee(i + 1, employee)"><i class="bi bi-pencil-square"></i></button>
+                            <button class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#deletemodal" (click)="setSelectedEmployee(employee)"><i class="bi bi-trash3-fill"></i></button>
+                            <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Delete User?</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to delete this User?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteEmployee(selectedEmployee)">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+              </div>    
+              <!-- modal for view/modify  -->
+              <!-- <div class="modal fade" id="view" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">View/Modify</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="userCreationForm1">
+                        <div class="form-group">
+                          <label>Profile Picture</label>
+                          <input type="file" formControlName="profilepic" class="form-control mt-3 mb-3"/>
+                        </div>
+                    
+                        <div class="form-group">
+                          <label for="firstName1">First Name</label>
+                          <input type="text" class="form-control" id="firstName1" placeholder="Enter First Name" onkeyup="validateFirstName1()" value="John">
+                          <small id="firstNameError1" class="text-danger"></small>
+                        </div>
+                    
+                        <div class="form-group">
+                          <label for="lastName1">Last Name</label>
+                          <input type="text" class="form-control" id="lastName1" placeholder="Enter Last Name" onkeyup="validateLastName1()" value="Doe">
+                          <small id="lastNameError1" class="text-danger"></small>
+                        </div>
+                    
+                        <div class="form-group">
+                          <label for="email1">Email</label>
+                          <input type="email" class="form-control" id="email1" placeholder="Enter Email" onkeyup="validateEmail1()" value="john.doe@example.com">
+                          <small id="emailError1" class="text-danger"></small>
+                        </div>
+                    
+                        <div class="form-group">
+                          <label for="userType1">User Type</label>
+                          <select class="form-control" id="userType1" onchange="validateUserType1()">
+                            <option value="--User type--">--User type--</option>
+                            <option value="Employee">Employee</option>
+                            <option value="Manager">Manager</option>
+                            <option value="HR">HR</option>
+                            <option value="Admin">Admin</option>
+                          </select>
+                          <small id="userTypeError1" class="text-danger"></small>
+                        </div>
+                    
+                        <div class="form-group">
+                          <label for="password1">Password</label>
+                          <input type="password" class="form-control" id="password1" placeholder="Enter Password" onkeyup="validatePassword1()" value="Password123!">
+                          <small id="passwordError1" class="text-danger"></small>
+                        </div>
+                    
+                        <div class="form-group">
+                          <label for="confirmPassword1">Confirm Password</label>
+                          <input type="password" class="form-control" id="confirmPassword1" placeholder="Confirm Password" onkeyup="validateConfirmPassword1()" value="Password123!">
+                          <small id="confirmPasswordError1" class="text-danger"></small>
+                        </div>
+                    
+                        <div class="form-group">
+                          <label for="department1">Department</label>
+                          <input type="text" class="form-control" id="department1" placeholder="Enter Department" onkeyup="validateDepartment1()" value="IT">
+                          <small id="departmentError1" class="text-danger"></small>
+                        </div>
+                    
+                        <div class="form-group">
+                          <label for="managerName1">Manager Name</label>
+                          <input type="text" class="form-control" id="managerName1" placeholder="Enter Manager Name" onkeyup="validateManagerName1()" value="Manager Doe">
+                          <small id="managerNameError1" class="text-danger"></small>
+                        </div>
+                    
+                        <div class="form-group d-flex mt-3 align-items-center">
+                          <button type="button" class="btn btn-success mx-2" onclick="validateForm1()">Modify</button>
+                          <button type="button" class="btn btn-secondary mx-2" data-bs-dismiss="modal" onclick="resetForm1()">Cancel</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Confirm</button>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- deletemodal -->
+              
+        </div>
+        
+
+    
+    
+</section>

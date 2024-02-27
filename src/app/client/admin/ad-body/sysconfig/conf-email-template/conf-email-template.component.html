@@ -1,0 +1,98 @@
+<div class="tab-pane show active fade" id="emailtemplate">
+  <div class="row">
+    <div class="col-12 my-4">
+      <button type="button" class="btn btn-primary float-end pe-4 me-5" data-bs-toggle="modal" data-bs-target="#emailModal">
+        Add E-mail Template
+      </button>
+    </div>
+    
+  </div>
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="emailModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ isCreateMode ? 'Create Template' : 'Modify Template' }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="emailTemplateForm"  (ngSubmit)="postEmailTemplate()">
+            <div class="mb-3 ">
+              <label for="templatename" class="form-label">E-mail template name:</label>
+              <input type="text" class="form-control" id="templatename" formControlName="templatename" />
+              <span *ngIf="emailTemplateForm.get('templatename')?.invalid && emailTemplateForm.get('templatename')?.touched" class="text-danger">E-mail template name is required.</span>
+            </div>
+            
+            <div class="mb-3">
+              <label for="department" class="form-label">Choose Department:</label>
+              <select class="form-select" id="department" formControlName="department">
+                <option value="All">All</option>
+                <option value="Sales">Sales</option>
+                <option value="IT">IT</option>
+                <option value="Accounts">Accounts</option>
+              </select>
+            </div>
+          
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject:</label>
+              <input type="text" class="form-control" id="subject" formControlName="subject" placeholder="Enter email subject" />
+              <span *ngIf="emailTemplateForm.get('subject')?.invalid && emailTemplateForm.get('subject')?.touched" class="text-danger">Subject is required.</span>
+            </div>
+          
+            <div class="mb-3">
+              <label for="body" class="form-label">Email Body:</label>
+              <textarea class="form-control" id="body" rows="10" formControlName="body" placeholder="Compose your email template here"></textarea>
+              <span *ngIf="emailTemplateForm.get('body')?.invalid && emailTemplateForm.get('body')?.touched" class="text-danger">Email Body is required.</span>
+            </div>
+          
+            
+            <div class="modal-footer overflow-hidden sticky-bottom" style="background-color: rgba(255, 255, 255, 0.9);">
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" *ngIf="isCreateMode">Add Template</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" *ngIf="!isCreateMode" (click)="updatetemplate()">UpdateTemplate</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="emailTemplateForm.reset()">
+                Close
+              </button>
+            </div>
+          </form>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-responsive table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Email Template Name</th>
+                <th class="text-center"> Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let template of Emailtemp_data;let i=index">
+                <td>{{ template.templatename }}</td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-outline-secondary mx-2" data-bs-toggle="modal" data-bs-target="#emailModal" (click)="edittemplate(i+1,template)">
+                    <span><i class="bi bi-pencil-square"></i></span> 
+                  </button>
+                  <button type="button" class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#delete_lt" (click)="deletetemplate(template)">
+                    <i class="bi bi-trash3-fill"></i> 
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  
+</div>

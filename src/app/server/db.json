@@ -1,0 +1,484 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "Logesh"
+    }
+  ],
+  "teamleaveutilization": [
+    {
+      "leavedata": 19,
+      "leavelabel": "Sick Leave",
+      "colorcode": "#41B8D5"
+    },
+    {
+      "leavedata": 12,
+      "leavelabel": "vacation Leave",
+      "colorcode": "#41B8D5"
+    },
+    {
+      "leavedata": 10,
+      "leavelabel": "Others",
+      "colorcode": "#41B8D5"
+    },
+    {
+      "leavedata": 3,
+      "leavelabel": "Annual Leave",
+      "colorcode": "#41B8D5"
+    },
+    {
+      "leavedata": 2,
+      "leavelabel": "Maternity/Paternity Leave",
+      "colorcode": "#41B8D5"
+    }
+  ],
+  "teamleavetrends": [
+    {
+      "label": "April",
+      "series1": "18",
+      "series2": "21",
+      "series3": "20"
+    },
+    {
+      "label": "May",
+      "series1": "26",
+      "series2": "18",
+      "series3": "15"
+    },
+    {
+      "label": "June",
+      "series1": "23",
+      "series2": "30",
+      "series3": "15"
+    },
+    {
+      "label": "July",
+      "series1": "26",
+      "series2": "28",
+      "series3": "35"
+    },
+    {
+      "label": "August",
+      "series1": "36",
+      "series2": "20",
+      "series3": "30"
+    }
+  ],
+  "User_config": [
+    {
+      "profilepic": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+      "firstname": "Logeshwaran",
+      "lastname": "M",
+      "Ecode": "E001",
+      "usertype": "employee",
+      "email": "logesh.lms@gmail.in",
+      "password": "Pwd@employee1",
+      "confirmPassword": "Pwd@employee1",
+      "department": "sd",
+      "manager": "sp",
+      "id": 13
+    },
+    {
+      "profilepic": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+      "firstname": "satheesh",
+      "lastname": "S",
+      "Ecode": "M001",
+      "usertype": "manager",
+      "email": "satheesh.lms@gmail.in",
+      "password": "Pwd@manager1",
+      "confirmPassword": "Pwd@manager1",
+      "department": "IT",
+      "manager": "Satheesh",
+      "id": 15
+    },
+    {
+      "id": 16,
+      "profilepic": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+      "firstname": "Vijay",
+      "lastname": "C",
+      "Ecode": "H001",
+      "usertype": "hr",
+      "email": "vijay.lms@gmail.in",
+      "password": "Pwd@hr123",
+      "department": "IT",
+      "manager": "Satheesh"
+    },
+    {
+      "id": 17,
+      "profilepic": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+      "firstname": "karthick",
+      "lastname": "M",
+      "Ecode": "A001",
+      "usertype": "admin",
+      "email": "karthick.lms@gmail.in",
+      "password": "Pwd@admin123",
+      "department": "Admin",
+      "manager": "Sathesh"
+    },
+    {
+      "profilepic": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+      "firstname": "Guhaneshwaran",
+      "lastname": "M",
+      "Ecode": "E002",
+      "usertype": "employee",
+      "email": "employee@lms.in",
+      "password": "Pwd@employee1",
+      "confirmPassword": null,
+      "department": "CSBS",
+      "manager": "Admin",
+      "id": 18
+    }
+  ],
+  "leavetype": [
+    {
+      "id": 8,
+      "leavetype": "Sick"
+    },
+    {
+      "leavetype": "casual",
+      "id": 9
+    },
+    {
+      "leavetype": "Vacation",
+      "id": 10
+    },
+    {
+      "leavetype": "Maternity",
+      "id": 11
+    },
+    {
+      "leavetype": "Personal",
+      "id": 12
+    },
+    {
+      "id": 13,
+      "leavetype": "Paternity"
+    }
+  ],
+  "holidays": [
+    {
+      "holidayType": "Independence Day",
+      "fromDate": "2024-08-14",
+      "toDate": "2024-08-14",
+      "id": 1
+    },
+    {
+      "holidayType": "Janmashtami",
+      "fromDate": "2024-08-29",
+      "toDate": "2024-08-29",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "holidayType": "Ganesh Chaturthi",
+      "fromDate": "2024-09-10",
+      "toDate": "2024-09-10"
+    },
+    {
+      "id": 4,
+      "holidayType": "Gandhi Jayanti",
+      "fromDate": "2024-10-02",
+      "toDate": "2024-10-02"
+    },
+    {
+      "id": 5,
+      "holidayType": "Dussehra",
+      "fromDate": "2024-10-15",
+      "toDate": "2024-10-15"
+    },
+    {
+      "id": 6,
+      "holidayType": "Diwali",
+      "fromDate": "2024-11-04",
+      "toDate": "2024-11-04"
+    },
+    {
+      "holidayType": "Christmas",
+      "fromDate": "2024-12-25",
+      "toDate": "2024-12-25",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "holidayType": "New Year's Eve",
+      "fromDate": "2024-12-31",
+      "toDate": "2024-12-31"
+    },
+    {
+      "holidayType": "Founder birthday",
+      "fromDate": "2024-02-18",
+      "toDate": "2024-02-24",
+      "id": 9
+    }
+  ],
+  "emailtemplate": [
+    {
+      "id": 1,
+      "templatename": "Leave Request",
+      "department": "All",
+      "subject": "Leave Request",
+      "body": "Dear Manager, Employee has requested for leave from start date to end date. Please approve or reject the leave request. Thanks  Regards, HR Team "
+    },
+    {
+      "id": 2,
+      "templatename": "Leave Approval",
+      "subject": "Leave Approval",
+      "body": "Dear Employee, Your leave request from start date to end date has been approved. Thanks &amp; Regards, HR Team ",
+      "department": "Sales"
+    },
+    {
+      "id": 3,
+      "templatename": "Leave Rejection",
+      "subject": "Leave Rejection",
+      "body": "Dear Employee, Your leave request from start date to end date has been rejected. Thanks &amp; Regards, HR Team ",
+      "department": "IT"
+    },
+    {
+      "id": 4,
+      "templatename": "Leave Cancellation ",
+      "department": "All",
+      "subject": "Leave Cancellation",
+      "body": "Dear Employee, Your leave request from start date to end date has been cancelled. Thanks  Regards, HR Team "
+    }
+  ],
+  "leavedata": [
+    {
+      "id": 1,
+      "leaveType": "Sick",
+      "reason": "Emergency",
+      "fromDate": "2024-02-21",
+      "toDate": "2024-02-22",
+      "permissionOption": "",
+      "timeOption": "",
+      "permissionFrom": "",
+      "permissionTo": "",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran"
+    }
+  ],
+  "Approvedleaveemployee": [
+    {
+      "id": 2,
+      "leaveType": "Personal",
+      "reason": "Emergency",
+      "fromDate": "2024-02-17",
+      "toDate": "2024-02-24",
+      "permissionOption": "",
+      "timeOption": "",
+      "permissionFrom": "",
+      "permissionTo": "",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "approved"
+    },
+    {
+      "id": 1,
+      "leaveType": "Vacation",
+      "reason": "going for a family trip",
+      "fromDate": "2024-02-20",
+      "toDate": "2024-02-24",
+      "permissionOption": "",
+      "timeOption": "",
+      "permissionFrom": "",
+      "permissionTo": "",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "approved"
+    },
+    {
+      "id": "b9b4530e-5804-452d-bc1f-4d4d3012a37b",
+      "leaveType": "Sick",
+      "reason": "Emergency",
+      "fromDate": "2024-02-19",
+      "toDate": "2024-02-24",
+      "permissionOption": "",
+      "timeOption": "",
+      "permissionFrom": "",
+      "permissionTo": "",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "approved"
+    },
+    {
+      "id": "965778b9-1aa4-413e-a2b5-25efd3d9886c",
+      "leaveType": "Sick",
+      "reason": "Emergency",
+      "fromDate": "2024-02-21",
+      "toDate": "2024-02-21",
+      "permissionOption": "",
+      "timeOption": "",
+      "permissionFrom": "",
+      "permissionTo": "",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "approved"
+    }
+  ],
+  "leavehistoryemployee": [
+    {
+      "id": 2,
+      "leaveType": "Personal",
+      "reason": "Emergency",
+      "fromDate": "2024-02-17",
+      "toDate": "2024-02-24",
+      "permissionOption": "",
+      "timeOption": "",
+      "permissionFrom": "",
+      "permissionTo": "",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "approved"
+    },
+    {
+      "id": 1,
+      "leaveType": "casual",
+      "reason": "personal works",
+      "fromDate": "2024-02-17",
+      "toDate": "2024-02-18",
+      "permissionOption": "permission",
+      "timeOption": "",
+      "permissionFrom": "17:42",
+      "permissionTo": "18:42",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "declined"
+    },
+    {
+      "id": "b9b4530e-5804-452d-bc1f-4d4d3012a37b",
+      "leaveType": "Sick",
+      "reason": "Emergency",
+      "fromDate": "2024-02-19",
+      "toDate": "2024-02-24",
+      "permissionOption": "",
+      "timeOption": "",
+      "permissionFrom": "",
+      "permissionTo": "",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "approved"
+    },
+    {
+      "id": "965778b9-1aa4-413e-a2b5-25efd3d9886c",
+      "leaveType": "Sick",
+      "reason": "Emergency",
+      "fromDate": "2024-02-21",
+      "toDate": "2024-02-21",
+      "permissionOption": "",
+      "timeOption": "",
+      "permissionFrom": "",
+      "permissionTo": "",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "approved"
+    }
+  ],
+  "Leavehistorymanager": [
+    {
+      "id": 2,
+      "leaveType": "Personal",
+      "reason": "Emergency",
+      "fromDate": "2024-02-17",
+      "toDate": "2024-02-24",
+      "permissionOption": "",
+      "timeOption": "",
+      "permissionFrom": "",
+      "permissionTo": "",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "approved"
+    },
+    {
+      "id": 1,
+      "leaveType": "casual",
+      "reason": "personal works",
+      "fromDate": "2024-02-17",
+      "toDate": "2024-02-18",
+      "permissionOption": "permission",
+      "timeOption": "",
+      "permissionFrom": "17:42",
+      "permissionTo": "18:42",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "declined"
+    },
+    {
+      "id": "b9b4530e-5804-452d-bc1f-4d4d3012a37b",
+      "leaveType": "Sick",
+      "reason": "Emergency",
+      "fromDate": "2024-02-19",
+      "toDate": "2024-02-24",
+      "permissionOption": "",
+      "timeOption": "",
+      "permissionFrom": "",
+      "permissionTo": "",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "approved"
+    },
+    {
+      "id": "965778b9-1aa4-413e-a2b5-25efd3d9886c",
+      "leaveType": "Sick",
+      "reason": "Emergency",
+      "fromDate": "2024-02-21",
+      "toDate": "2024-02-21",
+      "permissionOption": "",
+      "timeOption": "",
+      "permissionFrom": "",
+      "permissionTo": "",
+      "Ecode": "E403",
+      "Ename": "Logeshwaran",
+      "status": "approved"
+    }
+  ],
+  "leavepolicy": [
+    {
+      "id": 1,
+      "leaveType": "Sick leave",
+      "commencementDate": "2024-02-01",
+      "notes": "Introduction:\n\nAt LM solutions, we understand that unexpected illness can happen to anyone. We believe in supporting our employees through challenging times and fostering a healthy work-life balance. This policy outlines the guidelines for utilizing sick leave in a fair and consistent manner.\n\nEligibility:\n\nAll full-time and part-time employees are eligible to accrue and use sick leave.\n\nAccrual:\n\nFull-time employees accrue 30 hours of sick leave per quarter period.\nPart-time employees accrue 20 hours of sick leave per month period.\n\nLeave Usage:\n\nSick leave can be used for absences due to:\n\n- Personal illness or injury.\n- Caring for a sick family member (e.g., spouse, child, parent).\n- Attending medical appointments.\n\nEmployees are required to notify their manager as soon as possible when they are unable to work due to illness. This notification should be made through [preferred method, e.g., email, phone call].\n\nFor absences exceeding 3 consecutive days, a doctor's note may be required.\n\nDocumentation:\n\nEmployees may be required to provide documentation supporting their sick leave usage, such as a doctor's note or other medical evidence.\n\nPaid Leave:\n\nSick leave is paid if the leave period exceeds 1 month with.\n\nMisuse of Leave:\n\nMisuse of sick leave, such as providing false or misleading information about illness, may result in disciplinary action, up to and including termination of employment.\n\nAdditional Resources:\n\nEmployees who require additional support or have questions about the sick leave policy should contact [HR department, manager, etc.].\n\nDisclaimer:\n\nThis policy is for informational purposes only and does not constitute an employment contract. The company reserves the right to modify this policy at any time."
+    },
+    {
+      "id": 2,
+      "leaveType": "Vacation Leave",
+      "commencementDate": "2024-02-01",
+      "notes": "Introduction:\n\nAt LM solutions, we believe that taking time off to relax and recharge is essential for maintaining a healthy work-life balance. This policy outlines the guidelines for utilizing vacation leave in a fair and consistent manner.\n\nEligibility:\n\nAll full-time employees are eligible to accrue and use vacation leave.\n\nAccrual:\n\nFull-time employees accrue 40 hours of vacation leave per quarter period.\n\nLeave Usage:\n\nVacation leave can be used for any reason, such as taking a trip, spending time with family, or simply relaxing at home.\n\nEmployees are required to request vacation leave in advance, using the company's [preferred method, e.g., leave management system, email, etc.].\n\nApproval:\n\nVacation leave requests are subject to manager approval. Employees should submit their requests as early as possible to allow for adequate planning and coverage.\n\nPaid Leave:\n\nVacation leave is paid at the employee's regular rate of pay.\n\nCarryover:\n\nEmployees may carry over up to 40 hours of unused vacation leave to the next quarter period.\n\nForfeiture:\n\nUnused vacation leave in excess of 40 hours will be forfeited at the end of the quarter period.\n\nAdditional Resources:\n\nEmployees who require additional support or have questions about the vacation leave policy should contact [HR department, manager, etc.].\n\nDisclaimer:\n\nThis policy is for informational purposes only and does not constitute an employment contract. The company reserves the right to modify this policy at any time."
+    },
+    {
+      "id": 3,
+      "leaveType": "Maternity/Paternity Leave",
+      "commencementDate": "2024-02-01",
+      "notes": "Introduction:\n\nAt LM solutions, we understand that the arrival of a new family member is an important and exciting time. We believe in supporting our employees through this life event and fostering a healthy work-life balance. This policy outlines the guidelines for utilizing maternity and paternity leave in a fair and consistent manner.\n\nEligibility:\n\nAll full-time employees are eligible to take maternity or paternity leave.\n\nAccrual:\n\nMaternity and paternity leave is not accrued; it is provided as a benefit to eligible employees.\n\nLeave Usage:\n\nMaternity leave can be used by birth mothers to recover from childbirth and bond with their newborn. Paternity leave can be used by non-birth parents to bond with their newborn and support the family.\n\nEmployees are required to provide advance notice of their intention to take maternity or paternity leave, as well as the expected start and end dates of the leave.\n\nPaid Leave:\n\nMaternity and paternity leave is paid at the employee's regular rate of pay.\n\nDuration:\n\nMaternity leave is typically 6-8 weeks, depending on the method of delivery and any medical complications. Paternity leave is typically 1-2 weeks.\n\nAdditional Resources:\n\nEmployees who require additional support or have questions about the maternity and paternity leave policy should contact [HR department, manager, etc.].\n\nDisclaimer:\n\nThis policy is for informational purposes only and does not constitute an employment contract. The company reserves the right to modify this policy at any time."
+    },
+    {
+      "id": 4,
+      "leaveType": "Annual Leave",
+      "commencementDate": "2024-02-01",
+      "notes": "Introduction:\n\nAt LM solutions, we believe that taking time off to relax and recharge is essential for maintaining a healthy work-life balance. This policy outlines the guidelines for utilizing annual leave in a fair and consistent manner.\n\nEligibility:\n\nAll full-time employees are eligible to accrue and use annual leave.\n\nAccrual:\n\nFull-time employees accrue 40 hours of annual leave per quarter period.\n\nLeave Usage:\n\nAnnual leave can be used for any reason, such as taking a trip, spending time with family, or simply relaxing at home.\n\nEmployees are required to request annual leave in advance, using the company's [preferred method, e.g., leave management system, email, etc.].\n\nApproval:\n\nAnnual leave requests are subject to manager approval. Employees should submit their requests as early as possible to allow for adequate planning and coverage.\n\nPaid Leave:\n\nAnnual leave is paid at the employee's regular rate of pay.\n\nCarryover:\n\nEmployees may carry over up to 40 hours of unused annual leave to the next quarter period.\n\nForfeiture:\n\nUnused annual leave in excess of 40 hours will be forfeited at the end of the quarter period.\n\nAdditional Resources:\n\nEmployees who require additional support or have questions about the annual leave policy should contact [HR department, manager, etc.].\n\nDisclaimer:\n\nThis policy is for informational purposes only and does not constitute an employment contract. The company reserves the right to modify this policy at any time."
+    },
+    {
+      "id": 5,
+      "leaveType": "Bereavement Leave",
+      "commencementDate": "2024-02-01",
+      "notes": "Introduction:\n\nAt LM solutions, we understand that the loss of a loved one is a difficult and emotional time. We believe in supporting our employees through this challenging life event and fostering a healthy work-life balance. This policy outlines the guidelines for utilizing bereavement leave in a fair and consistent manner.\n\nEligibility:\n\nAll full-time employees are eligible to take bereavement leave.\n\nAccrual:\n\nBereavement leave is not accrued; it is provided as a benefit to eligible employees.\n\nLeave Usage:\n\nBereavement leave can be used to attend the funeral or memorial service of a family member, as well as to grieve and make necessary arrangements.\n\nEmployees are required to provide advance notice of their intention to take bereavement leave, as well as the expected start and end dates of the leave.\n\nPaid Leave:\n\nBereavement leave is paid at the employee's regular rate of pay.\n\nDuration:\n\nBereavement leave is typically 3-5 days, depending on the circumstances and the employee's relationship to the deceased.\n\nAdditional Resources:\n\nEmployees who require additional support or have questions about the bereavement leave policy should contact [HR department, manager, etc.].\n\nDisclaimer:\n\nThis policy is for informational purposes only and does not constitute an employment contract. The company reserves the right to modify this policy at any time."
+    },
+    {
+      "id": 6,
+      "leaveType": "Casual Leave",
+      "commencementDate": "2024-02-01",
+      "notes": "Introduction:\n\nAt LM solutions, we understand that employees may need time off for personal reasons or unexpected circumstances. We believe in supporting our employees through these situations and fostering a healthy work-life balance. This policy outlines the guidelines for utilizing casual leave in a fair and consistent manner.\n\nEligibility:\n\nAll full-time employees are eligible to accrue and use casual leave.\n\nAccrual:\n\nFull-time employees accrue 20 hours of casual leave per quarter period.\n\nLeave Usage:\n\nCasual leave can be used for any reason, such as personal appointments, family obligations, or unexpected emergencies.\n\nEmployees are required to request casual leave in advance, using the company's [preferred method, e.g., leave management system, email, etc.].\n\nApproval:\n\nCasual leave requests are subject to manager approval. Employees should submit their requests as early as possible to allow for adequate planning and coverage.\n\nPaid Leave:\n\nCasual leave is paid at the employee's regular rate of pay.\n\nCarryover:\n\nEmployees may carry over up to 20 hours of unused casual leave to the next quarter period.\n\nForfeiture:\n\nUnused casual leave in excess of 20 hours will be forfeited at the end of the quarter period.\n\nAdditional Resources:\n\nEmployees who require additional support or have questions about the casual leave policy should contact [HR department, manager, etc.].\n\nDisclaimer:\n\nThis policy is for informational purposes only and does not constitute an employment contract. The company reserves the right to modify this policy at any time."
+    },
+    {
+      "id": 7,
+      "leaveType": "Unpaid",
+      "commencementDate": "2024-02-01",
+      "notes": "Introduction:\n\nAt LM solutions, we understand that employees may need time off for personal reasons or unexpected circumstances. We believe in supporting our employees through these situations and fostering a healthy work-life balance. This policy outlines the guidelines for utilizing unpaid leave in a fair and consistent manner.\n\nEligibility:\n\nAll full-time employees are eligible to take unpaid leave.\n\nAccrual:\n\nUnpaid leave is not accrued; it is provided as a benefit to eligible employees.\n\nLeave Usage:\n\nUnpaid leave can be used for any reason, such as personal appointments, family obligations, or unexpected emergencies.\n\nEmployees are required to request unpaid leave in advance, using the company's [preferred method, e.g., leave management system, email, etc.].\n\nApproval:\n\nUnpaid leave requests are subject to manager approval. Employees should submit their requests as early as possible to allow for adequate planning and coverage.\n\nDuration:\n\nUnpaid leave may be taken for any duration, depending on the employee's needs and the circumstances.\n\nAdditional Resources:\n\nEmployees who require additional support or have questions about the unpaid leave policy should contact [HR department, manager, etc.].\n\nDisclaimer:\n\nThis policy is for informational purposes only and does not constitute an employment contract. The company reserves the right to modify this policy at any time."
+    },
+    {
+      "id": 8,
+      "leaveType": "Personal",
+      "commencementDate": "2024-02-01",
+      "notes": "Introduction:\n\nAt LM solutions, we understand that employees may need time off for personal reasons or unexpected circumstances. We believe in supporting our employees through these situations and fostering a healthy work-life balance. This policy outlines the guidelines for utilizing personal leave in a fair and consistent manner.\n\nEligibility:\n\nAll full-time employees are eligible to accrue and use personal leave.\n\nAccrual:\n\nFull-time employees accrue 20 hours of personal leave per quarter period.\n\nLeave Usage:\n\nPersonal leave can be used for any reason, such as personal appointments, family obligations, or unexpected emergencies.\n\nEmployees are required to request personal leave in advance, using the company's [preferred method, e.g., leave management system, email, etc.].\n\nApproval:\n\nPersonal leave requests are subject to manager approval. Employees should submit their requests as early as possible to allow for adequate planning and coverage.\n\nPaid Leave:\n\nPersonal leave is paid at the employee's regular rate of pay.\n\nCarryover:\n\nEmployees may carry over up to 20 hours of unused personal leave to the next quarter period.\n\nForfeiture:\n\nUnused personal leave in excess of 20 hours will be forfeited at the end of the quarter period.\n\nAdditional Resources:\n\nEmployees who require additional support or have questions about the personal leave policy should contact [HR department, manager, etc.].\n\nDisclaimer:\n\nThis policy is for informational purposes only and does not constitute an employment contract. The company reserves the right to modify this policy at any time."
+    }
+  ]
+}

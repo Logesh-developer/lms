@@ -1,0 +1,123 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">User Creation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="myForm" [formGroup]="formValue">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>User Information</h3>
+                        <div class="form-group">
+                            <label for="user_type">User Type: <span>*</span></label>
+                            <select class="form-control" name="user_type" id="user_type" formControlName="usertype">
+                                <option value="" disabled selected>Select User Type</option>
+                                <option value="admin">Admin</option>
+                                <option value="employee">Employee</option>
+                                <option value="manager">Manager</option>
+                            </select>
+                            <div id="userTypeError" class="error-message"></div>
+                        </div>
+                        <!-- Add new form fields -->
+                        <div class="form-group">
+                            <label for="name">Name: <span>*</span></label>
+                            <input type="text" class="form-control" name="name" id="name" formControlName="name">
+                            <div id="nameError" class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age:<span>*</span></label>
+                            <input type="number" class="form-control" name="age" id="age" formControlName="age">
+                            <div id="ageError" class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender:<span>*</span></label>
+                            <select class="form-control" name="gender" id="gender" formControlName="gender">
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="others">Others</option>
+                            </select>
+                            <div id="genderError" class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email: <span>*</span></label>
+                            <input type="email" class="form-control" name="email" id="email" formControlName="email">
+                            <div id="emailError" class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number: <span>*</span></label>
+                            <input type="tel" class="form-control" name="phone" id="phone" formControlName="phoneno">
+                            <div id="phoneError" class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Roll : <span>*</span></label>
+                            <input type="tel" class="form-control" name="role" id="phone" formControlName="role">
+                            <div id="rollError" class="error-message"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Access Information</h3>
+                        <!-- Continue with existing form fields -->
+                        
+                        <div class="form-group">
+                            <label for="experience">Experience:<span>*</span></label>
+                            <select class="form-control" name="experience" id="experience" formControlName="experience">
+                                <option value="" disabled selected>Select Experience</option>
+                                <option value="fresher">Fresher</option>
+                                <option value="1-2_years">1-2 years</option>
+                                <option value="2-4_years">2-4 years</option>
+                                <option value="above_4_years">Above 4 years</option>
+                            </select>
+                            <div id="experienceError" class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="designation">designation<span>*</span></label>
+                            <select class="form-control" name="designation" id="designation" formControlName="designation">
+                                <option value="" disabled selected>Select designation :</option>
+                                <option value="fresher">Fresher</option>
+                                <option value="1-2_years">1-2 years</option>
+                                <option value="2-4_years">2-4 years</option>
+                                <option value="above_4_years">Above 4 years</option>
+                            </select>
+                            <div id="experienceError" class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="salary">salary:<span>*</span></label>
+                            <select class="form-control" name="salary" id="salary" formControlName="salary">
+                                <option value="" disabled selected>Select salary</option>
+                                <option value="fresher">Fresher</option>
+                                <option value="1-2_years">1-2 years</option>
+                                <option value="2-4_years">2-4 years</option>
+                                <option value="above_4_years">Above 4 years</option>
+                            </select>
+                            <div id="experienceError" class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="user_id">User ID information:<span>*</span></label>
+                            <input type="text" class="form-control" name="user_id" id="user_id" formControlName="userid">
+                            <div id="userIdError" class="error-message"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dateofjoining">Date of Joining :<span>*</span></label>
+                            <input type="text" class="form-control" name="dateofjoining" id="dateofjoining" formControlName="dateofjoining">
+                            <div id="dateerror" class="error-message"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+               
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancel">Close</button>
+          <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)="  postEmployeeDetails()">Add </button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateEmployee()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>

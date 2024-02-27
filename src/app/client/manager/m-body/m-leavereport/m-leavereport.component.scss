@@ -1,0 +1,21 @@
+
+.cont-m {
+    min-height: 90dvh;
+    padding: 1rem;
+  }
+  
+  .tcont-m {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  .tcont-header {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    z-index: 1000;
+  }
+  
+  .pdt {
+    padding-top: 3rem;
+  }

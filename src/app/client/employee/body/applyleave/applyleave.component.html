@@ -1,0 +1,166 @@
+<section id="apply_l"  >
+    <div class="container-fluid ap_l mt-5 p-4">
+      <div class="row">
+        <div class="col-md-12" >
+          <h4 class="text-decoration-underline ms-2">Apply Leave</h4>
+        </div>
+      </div>  
+      <div class="row">
+        <div class="col ">
+          <div class="card aplc p-4  w-100">
+            <div class="card-body ">
+              
+              
+              <!-- leave.component.html -->
+              <form [formGroup]="leaveForm" (ngSubmit)="postleaveapply()">
+                <!-- Leave Type -->
+                <div class="mb-3 r1">
+                  <label for="leaveType" class="form-label">Leave Type:</label>
+                  <select class="form-select" id="leaveType" formControlName="leaveType">
+                    <option value="">Select a leave type</option>
+                    <option *ngFor="let type of leaveTypes" [value]="type.leavetype">{{ type.leavetype }}</option>
+                  </select>
+                  <span class="text-danger" *ngIf="leaveForm.get('leaveType')?.invalid && leaveForm.get('leaveType')?.touched">Leave type is required</span>
+                </div>
+
+                <!-- Reason -->
+                <div class="mb-3 r1">
+                  <label for="reason" class="form-label">Reason:</label>
+                  <input type="text" class="form-control" id="reason" formControlName="reason">
+                  <span class="text-danger" *ngIf="leaveForm.get('reason')?.invalid && leaveForm.get('reason')?.touched">Reason is required</span>
+                </div>
+
+                <!-- From Date -->
+                <div class="mb-3 r1">
+                  <label for="fromDate" class="form-label">From Date:</label>
+                  <input type="date" class="form-control" id="fromDate" formControlName="fromDate">
+                  <span class="text-danger" *ngIf="leaveForm.get('fromDate')?.errors?.['required'] && leaveForm.get('fromDate')?.touched">From date is required</span>
+                  <span class="text-danger" *ngIf="leaveForm.get('fromDate')?.errors?.['pastDate']">Invalid date</span>
+                </div>
+              
+                <!-- To Date -->
+                <div class="mb-3 r1">
+                  <label for="toDate" class="form-label">To Date:</label>
+                  <input type="date" class="form-control" id="toDate" formControlName="toDate" (change)="validateDateRange()">
+                  <span class="text-danger" *ngIf="leaveForm.get('toDate')?.errors?.['required'] && leaveForm.get('toDate')?.touched">To date is required</span>
+                  <span class="text-danger" *ngIf="leaveForm.get('toDate')?.errors?.['pastDate']">Invalid date</span>
+                  <span class="text-danger" id="ToError"></span>
+                </div>
+
+                <!-- Half Day / Permission -->
+                <!-- Remaining fields -->
+
+                <div class="mb-3 r1">
+                  <div *ngIf="leaveForm.get('leaveType')?.value === 'casual'">
+                    <div class="form-check r1">
+                      <input class="form-check-input" type="radio" formControlName="permissionOption" id="halfDay" value="halfDay">
+                      <label class="form-check-label" for="halfDay">Half Day</label>
+                    </div>
+                    <div *ngIf="leaveForm.get('permissionOption')?.value === 'halfDay'" class="row m-3">
+                      <div class="form-check r1">
+                        <input class="form-check-input" type="radio" formControlName="timeOption" id="morning" value="morning">
+                        <label class="form-check-label" for="morning">Morning</label>
+                      </div>
+                      <div class="form-check r1">
+                        <input class="form-check-input" type="radio" formControlName="timeOption" id="afternoon" value="afternoon">
+                        <label class="form-check-label" for="afternoon">Afternoon</label>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="text-danger" *ngIf="isTimeOptionInvalid()">
+                    Please select either Morning or Afternoon for Half Day.
+                  </span>
+                
+                  
+                  <div *ngIf="leaveForm.get('leaveType')?.value === 'casual'">
+                    <div class="form-check r1">
+                      <input class="form-check-input" type="radio" formControlName="permissionOption" id="permission" value="permission">
+                      <label class="form-check-label" for="permission">Permission</label>
+                    </div>
+                    <div *ngIf="leaveForm.get('permissionOption')?.value === 'permission'" class="row mb-3">
+                      <!-- Other controls for permission -->
+                      <div class="col">
+                        <label for="permissionFrom" class="form-label">From:</label>
+                        <input type="time" class="form-control" id="permissionFrom" formControlName="permissionFrom">
+                        <span class="text-danger" *ngIf="leaveForm.get('permissionFrom')?.touched && leaveForm.get('permissionFrom')?.invalid">
+                          Please set a valid timer value.
+                        </span>
+
+                      </div>
+                      <div class="col">
+                        <label for="permissionTo" class="form-label">To:</label>
+                        <input type="time" class="form-control" id="permissionTo" formControlName="permissionTo" (change)="validateTimeDifference()" >
+                        <span class="text-danger" *ngIf="leaveForm.get('permissionTo')?.touched && leaveForm.get('permissionTo')?.invalid">
+                          Please set a valid timer value.
+                        </span>
+                        <span class="text-danger" *ngIf="leaveForm.get('permissionTo')?.errors?.['lessThanFromTime']">
+                          To time should not be less than From time.
+                        </span>
+                        <span class="text-danger" *ngIf="leaveForm.get('permissionTo')?.errors?.['timeDifferenceExceeded']">
+                          Time difference should not exceed 3 hours.
+                        </span>
+
+                      </div>
+                      <span class="text-danger" *ngIf="isPermissionOptionInvalid() ">
+                        Please select the timer.
+                      </span>
+                      
+                    </div>
+                  </div>
+                  <!-- Submit and reset buttons -->
+                </div>
+                <div class="row ">
+                  <div class="col">
+                    <button type="submit" class="btn btn-primary mx-2" [disabled]="!leaveForm.valid || isPermissionOptionInvalid() || isTimeOptionInvalid()">Apply</button>
+                    <button type="reset" class="btn btn-secondary mx-2">Reset</button>
+                  </div>
+                </div>
+                
+                <!-- Submit, Reset, Cancel buttons -->
+              </form>
+
+              
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="col">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Leave Type</th>
+                <th>Accrued Leave</th>
+                <th>Leave Taken</th>
+                <th>Remaining Leave</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Annual</td>
+                <td>20</td>
+                <td>50</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>Sick</td>
+                <td>10</td>
+                <td>2</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>Maternity</td>
+                <td>12</td>
+                <td>0</td>
+                <td>12</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+
+      </div>
+      
+      
+    </div>
+</section>

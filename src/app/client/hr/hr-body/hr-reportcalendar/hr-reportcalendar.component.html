@@ -1,0 +1,122 @@
+<section id="Calendar"  class="mt-5"> 
+    <div class="container-fluid cont-hr">
+        <div class="row ">
+          <div class="col-md-12">
+            <h4 class="text-decoration-underline ms-2">Leave calendar</h4>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-lg col-sm-12" >
+            <full-calendar [options]="calendarOptions" class="custom-calendar" ></full-calendar>
+          
+          </div>
+          <div class="col-lg col-sm-12">
+                <div class="row ">
+                    <table class="table  table-hover w-100">
+                    <thead  style="color: rgb(39, 53, 104)">
+                        <tr>
+                        <th>Employee Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Type of Leave</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>logesh</td>
+                        <td>2023-11-01</td>
+                        <td>2023-11-03</td>
+                        <td>Annual Leave</td>
+                        </tr>
+                        <tr>
+                        <td>Joe Smith</td>
+                        <td>2023-11-05</td>
+                        <td>2023-11-06</td>
+                        <td>Sick Leave</td>
+                        </tr>
+                        <tr>
+                        <td>Samuel</td>
+                        <td>2023-11-10</td>
+                        <td>2023-11-15</td>
+                        <td>Maternity Leave</td>
+                        </tr>
+                        <tr>
+                        <td>Michael</td>
+                        <td>2023-11-12</td>
+                        <td>2023-11-14</td>
+                        <td>Personal Leave</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                <div class="row ">
+                <div class="container-fluid "  >
+                    <h2>Upcoming Leaves</h2>
+                    <table class="table  w-100 ">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Leave Name</th>
+                            <th>Leave Type</th>
+                        </tr>
+                        </thead>
+                        <tbody >
+                        <!-- Leave 1 -->
+                        <tr>
+                            <td>2023-12-31</td>
+                            <td>New Year's Eve</td>
+                            <td>Holiday</td>
+                        </tr>
+                    
+                        <!-- Leave 2 -->
+                        <tr>
+                            <td>2024-01-15</td>
+                            <td>Winter Break</td>
+                            <td>Vacation</td>
+                        </tr>
+                    
+                        <!-- Leave 3 -->
+                        <tr>
+                            <td>2024-02-14</td>
+                            <td>Valentine's Day</td>
+                            <td>Personal</td>
+                        </tr>
+                    
+                        <!-- Leave 4 -->
+                        <!-- <tr>
+                            <td>2024-03-17</td>
+                            <td>St. Patrick's Day</td>
+                            <td>Holiday</td>
+                        </tr> -->
+                    
+                        <!-- Leave 5 -->
+                        <!-- <tr>
+                            <td>2024-04-22</td>
+                            <td>Earth Day</td>
+                            <td>Special</td>
+                        </tr> -->
+                    
+                        <!-- Leave 6 -->
+                        <tr>
+                            <td>2024-05-01</td>
+                            <td>May Day</td>
+                            <td>Holiday</td>
+                        </tr>
+                    
+                        <!-- Leave 7 -->
+                        <tr>
+                            <td>2024-06-21</td>
+                            <td>Summer Solstice</td>
+                            <td>Special</td>
+                        </tr>
+                    
+                        <!-- Repeat the structure for additional leaves -->
+                    
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+          </div>
+        </div>
+    </div>
+</section>

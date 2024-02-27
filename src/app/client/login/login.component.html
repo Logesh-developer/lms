@@ -1,0 +1,81 @@
+
+  <section class="min-vh-100 "  style="background-color: #508bfc;">
+    <div class="container-fluid py-5 h-100 w-100"  >
+      <div class="d-flex justify-content-center align-items-center h-100" >
+        
+        <div class="card shadow-2-strong mx-auto" style="border-radius: 1rem;width: 400px;">
+          <div class="card-body p-5 ">
+
+            <h3 class="mb-5 text-center">Login</h3>
+            <img id="user-image" class="d-flex" [src]="imageSources[selectedUser] || '../../assets/login/icons8-customer-90.png'" alt="User Image">
+
+            <form #loginForm="ngForm" (ngSubmit)="formValidation(loginForm)">
+              <div class="mx-auto">
+                <select class="form-select rounded w-50 mx-auto" id="user-select" [(ngModel)]="selectedUser" name="selectedUser" required (ngModelChange)="userType()" >
+                  <option value="" disabled selected>Select User</option>
+                  <option value="admin">Admin </option>
+                  <option value="employee">Employee </option>
+                  <option value="hr">HR </option>
+                  <option value="manager">Manager </option>
+                </select>
+                <small id="erroruser" class="error">{{errorUtype}}</small>
+              </div>
+
+              <div class="form-outline mb-4 fc">
+                <label for="Email" class="form-label fs-5 ">Email:<span style="color: #ff3860;">*</span></label>
+                <input type="email" id="Email" class="form-control form-control-lg" placeholder="Email" [(ngModel)]="userEmail" name="userEmail" (keyup)="userIDValidation()" required>
+                <small id="erroremail" class="error">{{erroremail}}</small>
+              </div>
+
+              <div class="form-outline mb-4 fc">
+                <label for="Password" class="form-label fs-5">Password:<span style="color: #ff3860;">*</span></label>
+                <input type="password" id="Password" class="form-control form-control-lg " placeholder="Password" [(ngModel)]="password" name="password" (keyup)="validatePassword()" required>
+                <small id="errorpassword" class="error">{{errorpassword}}</small>
+              </div>
+
+              <div class="d-flex justify-content-around ">
+                <button class="btn btn-primary w-100 text-white fs-5" type="submit" [disabled]="!loginForm.valid">Login</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </section>
+ 
+
+<div class="modal fade m-0" id="credentials" #credentials  tabindex="-1" aria-labelledby="addPolicyLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header heading-bg-color px-4 py-3 form-font">
+              Invalid Credentials
+              <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="close"></button>
+          </div>
+          <div class="modal-body">
+              <h5>Use our sample credentials</h5>
+              <dl>
+                  <dt>Employee</dt>
+                  <dd>User ID: logesh.lms&#64;gmail.in</dd>
+                  <dd>Password: Pwd&#64;employee1</dd>
+              </dl>
+              <dl>
+                  <dt>Manager</dt>
+                  <dd>User ID: satheesh.lms&#64;gmail.in</dd>
+                  <dd>Password: Pwd&#64;manager1</dd>
+              </dl>
+              <dl>
+                  <dt>HR</dt>
+                  <dd>User ID: vijay.lms&#64;gmail.in</dd>
+                  <dd>Password: Pwd&#64;hr123</dd>
+              </dl>
+              <dl>
+                  <dt>Administrator</dt>
+                  <dd>User ID: karthick.lms&#64;gmail.in</dd>
+                  <dd>Password: Pwd&#64;admin123</dd>
+              </dl>
+          </div>
+      </div>
+  </div>
+</div>

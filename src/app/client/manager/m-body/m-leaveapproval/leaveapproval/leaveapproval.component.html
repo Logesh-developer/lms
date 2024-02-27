@@ -1,0 +1,96 @@
+<div class="tab-pane fade show active" id="tab1">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="text-decoration-underline ms-2">Leave Approval</h4>
+      </div>
+    </div>  
+    <div class="container-fluid  my-2 py-4">
+      <table class="table table-hover table-responsive  my-4"   datatable [dtOptions]="dtOptions1" [dtTrigger]="dtTrigger1">
+        <thead >
+          <tr class="text-center">
+            <th>E.code</th>
+            <th>Name</th>
+            <th>Leave Type</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Days/Hrs</th>
+            <th class="d-flex justify-content-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="scrollable-body">
+          <tr *ngFor="let leave of leaveData">
+            <td>{{ leave.Ecode }}</td>
+            <td>{{ leave.Ename }}</td>
+            <td>{{ leave.leaveType }}</td>
+            <td>{{ leave.fromDate }}</td>
+            <td>{{ leave.toDate}}</td>
+            <td>{{ calculateDays(leave.fromDate, leave.toDate, leave.permissionFrom, leave.permissionTo) }}</td>
+            <td class="d-flex justify-content-center">
+              <button class="btn btn-secondary btn-sm mx-2" data-bs-toggle="modal" data-bs-target="#view" (click)="setSelectedLeave(leave)" >View</button>
+              <button class="btn btn-success btn-sm change-text mx-2" data-bs-toggle="modal" data-bs-target="#approve" (click)="setSelectedLeave(leave)" (click)="approveLeave(leave)" >Approve</button>
+              <button class="btn btn-danger btn-sm mx-2" data-bs-toggle="modal" data-bs-target="#decline" (click)="setSelectedLeave(leave)"  >Decline</button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="modal fade" id="view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Leave Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong>E.code:</strong> {{ selectedleave?.Ecode }}</p>
+              <p><strong>Name:</strong> {{ selectedleave?.Ename }}</p>
+              <p><strong>Leave Type:</strong> {{ selectedleave?.leaveType }}</p>
+              <p><strong>From:</strong> {{ selectedleave?.fromDate }}</p>
+              <p><strong>To:</strong> {{ selectedleave?.toDate }}</p>
+              <p><strong>Days/Hrs:</strong> {{ calculateDays(selectedleave?.fromDate, selectedleave?.toDate, selectedleave?.permissionFrom, selectedleave?.permissionTo) }}</p>
+              <p><strong>Reason:</strong> {{ selectedleave?.reason }}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="approve" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Approval </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="text-success">Leave is successfully approved</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-bs-dismiss="modal" >ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="decline" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Decline confirmation </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="text-danger">Do you want to decline the leave request ?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger  " data-bs-dismiss="modal"  (click)="declineLeave(selectedleave)">Confirm</button>
+              <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Cancel</button>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>

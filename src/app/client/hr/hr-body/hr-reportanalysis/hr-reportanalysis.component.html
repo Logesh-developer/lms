@@ -1,0 +1,300 @@
+<section id="report_analytics" class="pt-5 " >
+    <div class="row pt-5">
+        <div class="col-md-12">
+          <h4 class="text-decoration-underline ms-2">Report analytics</h4>
+        </div>
+      </div>
+    <div class="container-fluid cont-hr">
+        <div class="col d-flex  ">
+            <!-- Search bar at the top left -->
+            <div class="col ">
+              <select name="sort" id="sort" class="form-select " style="width:15%;">
+                  <option value="Sort">Sort by</option>
+                  <option value="Leave Type">Alphabetical order</option>
+                  <option value="time">Department</option>
+                  <option value="E.code">New</option>
+                  <option value="Status">Status</option>
+              </select>   
+            </div>
+            <div class="col-4 ms-auto">
+              <div class="input-group  me-auto mb-1 ">
+                  <input type="text" class="form-control search" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="button"><span><i class="bi bi-search"></i></span></button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="container-fluid mt-3">
+            <div class="modal fade" id="leaveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title  " id="exampleModalLabel">Employee Leave Records</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container mt-4">
+                      <!-- Employee Details -->
+                      <div class="card mb-4">
+                      
+                        <div class="card mb-4 ">
+                          <div class="card-header bg-white">
+                            Employee Details
+                          </div>
+                          <div class="card-body">
+                            <table class="table ">
+                              <tr >
+                                <td  colspan="2" > <img src="/../../assets/login/images/New Project (1).png" alt="" class="img-fluid imgcentered"></td>
+                              </tr>
+                              <tr>
+                                <th>Name:</th>
+                                <td>Ram</td>
+                              </tr>
+                              <tr>
+                                <th>E.code:</th>
+                                <td>M932</td>
+                              </tr>
+                              <tr>
+                                <th>Team number:</th>
+                                <td>7</td>
+                              </tr>
+                              <tr>
+                                <th>Designation:</th>
+                                <td>Manager</td>
+                              </tr>
+                              <tr>
+                                <th>Department:</th>
+                                <td>Product design</td>
+                              </tr>
+                              <tr>
+                                <th>E-mail:</th>
+                                <td>Ram&#64;company.com</td>
+                              </tr>
+                              <tr>
+                                <th>Phone:</th>
+                                <td>8903825461</td>
+                              </tr>
+                              <tr>
+                                <th>Joining Date:</th>
+                                <td>15-05-2018</td>
+                              </tr>
+                              <tr>
+                                <th>Leave Balance:</th>
+                                <td>15 days</td>
+                              </tr>
+                              <tr>
+                                <th>Work Schedule:</th>
+                                <td>9am - 5pm</td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <!-- Leave Information Cards -->
+                      <div class="row text-center">
+                        <div class="col-md-4">
+                          <div class="card mb-4">
+                            <div class="card-header bg-white">
+                              Accrued Leaves
+                            </div>
+                            <div class="card-body">
+                              <!-- Add content for Accrued Leaves card -->
+                              <p>15</p>
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <div class="col-md-4">
+                          <div class="card mb-4">
+                            <div class="card-header bg-white">
+                              Leaves Used
+                            </div>
+                            <div class="card-body">
+                              <!-- Add content for Leaves Used card -->
+                              <p>7</p>
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <div class="col-md-4">
+                          <div class="card mb-4">
+                            <div class="card-header bg-white">
+                              Paid Leaves Available
+                            </div>
+                            <div class="card-body">
+                              <!-- Add content for Paid Leaves Available card -->
+                              <p>5</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <!-- Detailed Leave Transactions Table -->
+                      <div class="card">
+                        <div class="card-header">
+                          Leave Transactions
+                        </div>
+                        <div class="card-body">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Leave Type</th>
+                                <th>Status</th>
+                                <th>Days/hours</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <!-- Add rows for detailed leave transactions -->
+                              
+                              <tr>
+                                <td>2023-01-01</td>
+                                <td>2023-01-05</td>
+                                <td>Annual Leave</td>
+                                <td>Approved</td>
+                                <td>5 days</td>
+                              </tr>
+                              <tr>
+                                <td>15 Feb 2023</td>
+                                <td>18 Feb 2023</td>
+                                <td>Sick</td>
+                                <td>Approved</td>
+                                <td>4 days/0 hours</td>
+                                
+                              </tr>
+                              <tr>
+                                <td>02 Apr 2023</td>
+                                <td>05 Apr 2023</td>
+                                <td>Personal</td>
+                                <td>Pending</td>
+                                <td>4 days/0 hours</td>
+                                
+                              </tr>
+                              <tr>
+                                <td>10 Jul 2023</td>
+                                <td>15 Jul 2023</td>
+                                <td>Vacation</td>
+                                <td>Rejected</td>
+                                <td>6 days/0 hours</td>
+                                
+                              </tr>
+                              <tr>
+                                <td>25 Sept 2023</td>
+                                <td>26 Sept 2023</td>
+                                <td>Sick</td>
+                                <td>Approved</td>
+                                <td>2 days/0 hours</td>
+                                
+                              </tr>
+                              <tr>
+                                <td>25 Sept 2023</td>
+                                <td>26 Sept 2023</td>
+                                <td>Sick</td>
+                                <td>Approved</td>
+                                <td>2 days/0 hours</td>
+                                
+                              </tr>
+                              <tr>
+                                <td>25 Sept 2023</td>
+                                <td>26 Sept 2023</td>
+                                <td>Sick</td>
+                                <td>Approved</td>
+                                <td>2 days/0 hours</td>
+                                
+                              </tr>
+                              <tr>
+                                <td>26 Sept 2023</td>
+                                <td>26 Sept 2023</td>
+                                <td>Sick</td>
+                                <td>Approved</td>
+                                <td>0 days/2 hours</td>
+                                
+                              </tr>
+                              <tr>
+                                <td>25 Sept 2023</td>
+                                <td>25 Sept 2023</td>
+                                <td>Sick</td>
+                                <td>Approved</td>
+                                <td>0 days/3 hours</td>
+                                
+                              </tr> 
+                              <!-- Add more rows as needed -->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"    data-bs-dismiss="modal">Export to PDF</button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+            <table class="table table-responsive w-100 align-baseline align-items-center">
+              <thead>
+                <tr>
+                  <th>Ecode</th>
+                  <th>Profile Picture</th>
+                  <th>Employee Name</th>
+                  <th>Department</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody >
+                <!-- Employee 1 -->
+                <tr>
+                  <td>E001</td>
+                  <td><img src="/../../assets/login/images/profile.png" alt="Profile Picture" ></td>
+                  <td>John Doe</td>
+                  <td>Sales</td>
+                  <td><button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#leaveModal">View</button></td>
+                </tr>
+          
+                <!-- Repeat the structure for additional employees -->
+                <tr>
+                  <td>E002</td>
+                  <td><img src="/../../assets/login/images/profile.png" alt="Profile Picture"></td>
+                  <td>Jane Smith</td>
+                  <td>Marketing</td>
+                  <td><button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#leaveModal">View</button></td>
+                </tr>
+
+                <tr>
+                    <td>E002</td>
+                    <td><img src="/../../assets/login/images/profile.png" alt="Profile Picture"></td>
+                    <td>Jane Smith</td>
+                    <td>Marketing</td>
+                    <td><button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#leaveModal">View</button></td>
+                  </tr>
+
+                  <tr>
+                    <td>E002</td>
+                    <td><img src="/../../assets/login/images/profile.png" alt="Profile Picture"></td>
+                    <td>Jane Smith</td>
+                    <td>Marketing</td>
+                    <td><button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#leaveModal">View</button></td>
+                  </tr>
+
+                  <tr>
+                    <td>E002</td>
+                    <td><img src="/../../assets/login/images/profile.png" alt="Profile Picture"></td>
+                    <td>Jane Smith</td>
+                    <td>Marketing</td>
+                    <td><button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#leaveModal">View</button></td>
+                  </tr>
+          
+                <!-- Repeat the structure for additional employees -->
+                <!-- Up to 8 employees -->
+          
+              </tbody>
+            </table>
+          </div>
+    </div>
+  </section>

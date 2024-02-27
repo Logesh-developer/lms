@@ -1,0 +1,239 @@
+<section id="report" class="pdt overflow-x-hidden">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-decoration-underline ms-2">Leave Report</h4>
+        </div>
+    </div>
+    <div class="container-fluid Rs cont-m">
+        <div class="row">
+            <div class="col">
+                <div class="row my-2 border">
+                    <div class="container tcont-m">
+                      <table class="table table-responsive table-hover table-striped w-100 table-striped border text-center align-baseline" id="emplr">
+                        <thead class="tcont-header" style="height: 3rem;">
+                          <tr>
+                            <th class="text-white text-center" style="background-color: rgb(47, 95, 152);">S.No</th>
+                            <th class="text-white text-center" style="background-color: rgb(47, 95, 152)">Profile Pic</th>
+                            <th class="text-white text-center" style="background-color: rgb(47, 95, 152)">E.code</th>
+                            <th class="text-white text-center" style="background-color: rgb(47, 95, 152)">Name</th>
+                            <th class="text-white text-center" style="background-color: rgb(47, 95, 152)">Department</th>
+                            <th class="text-white text-center" style="background-color: rgb(47, 95, 152)">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let employee of employees; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td><img src="/../../assets/login/images/profile.png" alt="Profile Pic"></td>
+                            <td>{{ employee.code }}</td>
+                            <td>{{ employee.name }}</td>
+                            <td>{{ employee.department }}</td>
+                            <td><button class="btn btn-primary btn-sm detail" data-bs-toggle="modal" data-bs-target="#empdetail" [attr.id]="'d' + (i + 1)" (click)="openDetailsModal(employee)">Details</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                </div>
+                <div class="modal fade" id="empdetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Employee Leave Report</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body overflow-x-hidden">
+                              <div class="container">
+                                  <!-- Profile Image -->
+                                  <div class="row d-flex align-baseline align-items-center">
+                                    
+                                  
+                                    <div class="col-md-6 ">
+                                      <div class="text-center mx-6" style="margin-top: 1rem; margin-bottom: 1rem;">
+                                        <img src="/../../assets/login/icons8-employee-90.png" alt="Profile Image" class="profile-img img-fluid" width="250">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <!-- User Details -->
+                                  <div class="user-details">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <table class="table table-responsive">
+                                                <!-- User details content here -->
+                                                <tbody>
+                                                  <tr>
+                                                    <th>Name:</th>
+                                                    <td>{{ selectedEmployee.name }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>E.code:</th>
+                                                    <td>{{ selectedEmployee.code }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>Team number:</th>
+                                                    <td>7</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>Designation:</th>
+                                                    <td>Manager</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>Department:</th>
+                                                    <td>{{ selectedEmployee.department }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>E-mail:</th>
+                                                    <td>Ram&#64;company.com</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>Phone:</th>
+                                                    <td>8903825461</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>Joining Date:</th>
+                                                    <td>15-05-2018</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>Leave Balance:</th>
+                                                    <td>15 days</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>Work Schedule:</th>
+                                                    <td>9am - 5pm</td>
+                                                  </tr>
+                                                </tbody>
+                                                
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                    </div>
+                                  </div>
+                                  <!-- Two Images Side by Side -->
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <!-- <img src="/../../assets/login/images/piechart.png" alt="Image 1" width="320"> -->
+                                          <canvas id="Dougnutchart_employee" class="p-0 "  ></canvas>
+
+                                      </div>
+                                      <div class="col-md-6">
+                                          <!-- <img src="/../../assets/login/images/linec.png" alt="Image 2" width="320"> -->
+                                          <canvas id="lineChart_employee" height="1600" width="1600"   ></canvas>
+
+                                      </div>
+                                  </div>
+                                  <!-- Leave History -->
+                                  <div class="leave-history">
+                                      <!-- Include the leave history table here -->
+                                      <table class="table mx-5 table-responsive" id="empdetail_table" style="font-size: 14px;">
+                                          <!-- Leave history content here -->
+                                          <thead>
+                                              <tr>
+                                                <th>Start Date</th>
+                                                <th>End Date</th>
+                                                <th>Leave Type</th>
+                                                <th>Status</th>
+                                                <th>Days/Hours</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>2023-01-01</td>
+                                                <td>2023-01-05</td>
+                                                <td>Annual Leave</td>
+                                                <td>Approved</td>
+                                                <td>5 days</td>
+                                              </tr>
+                                              <tr>
+                                                <td>15 Feb 2023</td>
+                                                <td>18 Feb 2023</td>
+                                                <td>Sick</td>
+                                                <td>Approved</td>
+                                                <td>4 days/0 hours</td>
+                                              </tr>
+                                              <tr>
+                                                <td>02 Apr 2023</td>
+                                                <td>05 Apr 2023</td>
+                                                <td>Personal</td>
+                                                <td>Pending</td>
+                                                <td>4 days/0 hours</td>
+                                              </tr>
+                                              <tr>
+                                                <td>10 Jul 2023</td>
+                                                <td>15 Jul 2023</td>
+                                                <td>Vacation</td>
+                                                <td>Rejected</td>
+                                                <td>6 days/0 hours</td>
+                                              </tr>
+                                              <tr>
+                                                <td>25 Sept 2023</td>
+                                                <td>26 Sept 2023</td>
+                                                <td>Sick</td>
+                                                <td>Approved</td>
+                                                <td>2 days/0 hours</td>
+                                              </tr>
+                                              <tr>
+                                                <td>25 Sept 2023</td>
+                                                <td>26 Sept 2023</td>
+                                                <td>Sick</td>
+                                                <td>Approved</td>
+                                                <td>2 days/0 hours</td>
+                                              </tr>
+                                              <tr>
+                                                <td>25 Sept 2023</td>
+                                                <td>26 Sept 2023</td>
+                                                <td>Sick</td>
+                                                <td>Approved</td>
+                                                <td>2 days/0 hours</td>
+                                              </tr>
+                                              <tr>
+                                                <td>26 Sept 2023</td>
+                                                <td>26 Sept 2023</td>
+                                                <td>Sick</td>
+                                                <td>Approved</td>
+                                                <td>0 days/2 hours</td>
+                                              </tr>
+                                              <tr>
+                                                <td>25 Sept 2023</td>
+                                                <td>25 Sept 2023</td>
+                                                <td>Sick</td>
+                                                <td>Approved</td>
+                                                <td>0 days/3 hours</td>
+                                              </tr>
+                                            </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">ok</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+                <div class="row border" >
+                    <div class="col-md-6 border rounded mx-auto d-block" >
+                        <div class="col-md-6 mx-auto" >
+                            <p class="text-center">Team Leave Utilization</p>
+                            <!-- <canvas id="leaveChart"  class="p-0" style="height: 100%; width:100%;"></canvas> -->
+                            <!-- <img src="/../../assets/login/images/piechart.png" alt="Image 1" width="320"> -->
+                            <div >
+                              <!-- <app-dougnutchart></app-dougnutchart> -->
+                              <canvas id="Dougnutchart" class="p-0 "  ></canvas>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 border overflow-x-hidden rounded mx-auto d-block" >
+                        <div class="col-md-6 mx-auto"  >
+                            <p class="ms-5">Team Leave Trends</p>
+                            <!-- <canvas id="lineChart" height="300" class="w-100"></canvas> -->
+                            <!-- <img src="/../../assets/login/images/linec.png" alt="Image 2" width="320"> -->
+                            <canvas id="lineChart" height="1600" width="1600"   ></canvas>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

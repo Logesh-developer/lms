@@ -1,0 +1,120 @@
+.aplc {
+    width: 60%;
+  }
+  
+  .r1 {
+    margin-bottom: 3rem;
+  }
+  
+  .lpc {
+    width: 100px;
+  }
+  
+  .cont-hr {
+    height: 85dvh;
+    padding: 1rem;
+  }
+  .calendar-container {
+    background: #fff;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+    header {
+        display: flex;
+        align-items: center;
+        padding: 25px 30px 10px;
+        justify-content: space-between;
+
+        .calendar-navigation {
+            display: flex;
+
+            span {
+                height: 38px;
+                width: 38px;
+                margin: 0 1px;
+                cursor: pointer;
+                text-align: center;
+                line-height: 38px;
+                border-radius: 50%;
+                user-select: none;
+                color: #aeabab;
+                font-size: 1.9rem;
+
+                &:last-child {
+                    margin-right: -10px;
+                }
+
+                &:hover {
+                    background: #f2f2f2;
+                }
+            }
+        }
+
+        .calendar-current-date {
+            font-weight: 500;
+            font-size: 1.45rem;
+        }
+    }
+
+    .calendar-body {
+        padding: 20px;
+
+        ul {
+            list-style: none;
+            flex-wrap: wrap;
+            display: flex;
+            text-align: center;
+        }
+
+        .calendar-dates {
+            margin-bottom: 20px;
+
+            li {
+                width: calc(100% / 7);
+                font-size: 1.07rem;
+                color: #414141;
+            }
+
+            &.calendar-weekdays li {
+                cursor: default;
+                font-weight: 500;
+            }
+
+            &.calendar-dates li {
+                margin-top: 30px;
+                position: relative;
+                z-index: 1;
+                cursor: pointer;
+
+                &.inactive {
+                    color: #aaa;
+                }
+
+                &.active {
+                    color: #fff;
+
+                    &::before {
+                        background: #6332c5;
+                    }
+                }
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    z-index: -1;
+                    top: 50%;
+                    left: 50%;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &:not(.active):hover::before {
+                    background: #e4e1e1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+<div class="tab-pane show active fade " id="leavetype">
+  
+  <div class="container py-4">
+    <div class="row ">
+      <div class="col">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary float-end pe-4 me-5" data-bs-toggle="modal" data-bs-target="#addLeaveTypeModal">
+          add Leave Type
+        </button>
+
+        <!-- leave type Modal -->
+        <div class="modal fade" id="addLeaveTypeModal" tabindex="-1" aria-labelledby="addLeaveTypeModal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title " id="leavetype">{{ isCreateMode ? 'Create Leavetype' : 'Modify Leavetype' }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Form -->
+                <form [formGroup]="leaveForm" (ngSubmit)="postleavedetails()">
+                  <div class="mb-3">
+                      <label for="leaveType" class="form-label">Leave Type:</label>
+                      <input type="text" class="form-control" id="leavetype" formControlName="leavetype">
+                      <small *ngIf="leaveForm.get('leaveType')?.hasError('required')" class="text-danger">
+                          Leave type is required.
+                      </small>
+                  </div>
+
+                  <div class="d-flex gap-4">
+                      <button *ngIf="isCreateMode" type="submit" class="btn btn-primary"  [disabled]="leaveForm.invalid">Add</button>
+                      <button *ngIf="!isCreateMode"  type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="!leaveForm.valid" (click)="updateleave()">Update</button>
+                      <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  </div>
+                </form>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <!-- Cancel Confirmation Modal -->
+        <div class="modal" id="cancelConfirmationModal" tabindex="-1" aria-labelledby="cancelConfirmationModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="cancelConfirmationModalLabel">Confirm Cancel</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to cancel? Any unsaved changes will be lost.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Keep Editing</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Yes, Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container ">
+    <div class="row ">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <!-- Leave Types Table -->
+            <table class="table table-responsive table-striped table-hover mx-auto">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Leave Type</th>
+                  <th class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let leave of leavetypes_data; let i = index;">
+                  <td>{{i+1}}</td>
+                  <td>{{ leave.leavetype }}</td>
+                  <td class="text-center">
+                    <button type="button" class="btn btn-outline-secondary mx-2"  data-bs-toggle="modal" data-bs-target="#addLeaveTypeModal" (click)="editleave(i+1,leave)">
+                      <span><i class="bi bi-pencil-square"></i></span>
+                    </button>
+                    <button type="button" class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#Delete" (click)="setselectedleavetype(leave)" ><i class="bi bi-trash3-fill"></i></button>
+                    <!-- deletemodal  -->
+                    <div class="modal fade" id="Delete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title " id="staticBackdropLabel">Confirmation</h5>
+                          </div>
+                          <div class="modal-body text-danger">
+                            Do you want to delete the Leave Type?
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteleavetype(selectedleavetype)">Delete</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            
+            
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    
+</div>
+
